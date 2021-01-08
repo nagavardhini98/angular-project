@@ -1,0 +1,36 @@
+<soho-header>
+
+  <soho-toolbar-flex>
+    <!-- <button soho-toolbar-flex-nav-button>Show Navigation</button> -->
+    <soho-toolbar-flex-section [isButtonSet]="true" [isTitle]="true" class="no-scroll">
+      <h2 class="head-logo soho-toolbar-flex-page-title fs-large bold text-white" style="font-size: 30px;">Quizzie</h2>
+      <button></button>
+        <button soho-menu-button>
+          <span>Menu</span>
+        </button>
+        <ul class="popupmenu">
+          <li *ngIf="getCurUser()!=0"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+          <li *ngIf="getCurUser()!=0"><a routerLink="/myquizzes">My Quizzes</a></li>
+          <li *ngIf="getCurUser()==0"><a  routerLink="/">Login</a></li>
+          <li><a routerLink="/register">Register</a></li>
+          <li><a *ngIf="getCurUser()!=0" (click)="logout()">Logout</a></li>
+          <!-- <li class="submenu">
+            <a href="#">Item Three</a>
+            <ul class="popupmenu">
+              <li><a href="#">Sub-Item One</a></li>
+              <li><a href="#">Sub-Item Two</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Item Four</a></li> -->
+        </ul>
+<!-- 
+        <button soho-button="icon" icon="settings" [disabled]="true">Settings</button>
+        <button soho-button="icon" icon="delete">Delete</button> -->
+      </soho-toolbar-flex-section>
+
+    <soho-toolbar-flex-more-button [isPageChanger]="true">
+      <app-personalize-menu ></app-personalize-menu>
+    </soho-toolbar-flex-more-button>
+  </soho-toolbar-flex>
+
+</soho-header>

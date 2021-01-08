@@ -1,0 +1,22 @@
+
+<div class="row top-padding center-align-content">
+  <div class="two-thirds column">
+    <div class="widget"  style="padding: 2%;">
+    
+      <h1><b>Quiz Name:</b> {{data.quizName}}</h1><br>
+      <h2><b>Quiz Description:</b> {{data.quizDesc}}</h2><br>
+      <h2><b>No of questions:</b> {{data.questionsCount}}</h2><br>
+    
+      <div class="widget-header">
+        <h2 class="widget-title"><b>Quiz Detailed Report</b></h2>
+      </div>
+      <div class="widget-content">
+        <div soho-column
+          [dataset]="columnData"
+          [yAxis]="yAxis"
+          [type]="columnType">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

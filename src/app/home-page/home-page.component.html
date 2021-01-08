@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <div class="sub-header">
+                <div class="">
+                    <h1 style="color:white">All Quizzes</h1>
+                </div>
+            </div>
+            <div>
+                <div class="demo-grid" *ngFor="let quiz of quizzes; ">
+                    <div class="four columns">
+                        <div class="content-area-square" style="padding:1%; margin-bottom: 1%;">
+                            <div class="text-strong" style="font-size: large; padding: 3px;padding-left: 10px;">
+                                <div class="color-primary">{{quiz.quizName}}</div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="full column">
+                                    <div class="row">
+                                        <div class="">
+                                            <b>Subject:</b> {{quiz.quizSubject}}
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="">
+                                            <b>Description: </b>{{quiz.quizDesc}}
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row center-align-content">
+                                        <button class="btn-primary" [disabled]="!quiz.isActive"
+                                        [routerLink]="['/quiz-screen', quiz.quizId]"><a style="color:white"
+                                                routerLinkActive="active">Attempt now</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

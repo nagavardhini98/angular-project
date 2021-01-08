@@ -1,0 +1,127 @@
+<!-- <div class="twelve columns"> -->
+<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+    <div class="twelve columns">
+        <div class="center-align-content">
+            <h1 style="color:white;font-weight: bold;">{{quizform.value.quizName}}</h1>
+        </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="twelve columns">
+        <div class="fieldset-title  text-strong">Attempted:{{attempted_count}}</div>
+    </div>
+</div> -->
+<div class="row">
+    <div class="twelve columns">
+        <div class="row ">
+            <form id="quizForm" [formGroup]="quizform">
+                <ng-container formArrayName="questionforms">
+                    <div *ngFor="let i of questionforms.controls; let que_id=index" [formGroupName]="que_id">
+                        <div class="content-card border-right-warning" id="{{que_id+500}}">
+                            <div class="container">
+                                <div class="form-reponsive row">
+                                    <div class="full column">
+                                        <div class="sub-header">
+                                            <h1 class="fieldset-title  text-strong">{{que_id+1}}.
+                                                {{i.value.question}}</h1>
+                                        </div>
+                                        <div class="twelve columns">
+                                            <div class="row">
+                                                <div class="left-align-content " id="left">
+                                                    <div *ngIf="i.value.answertype=='choice'">
+                                                        <ng-container formArrayName="answers">
+                                                            <div *ngFor="let j of i.get('answers').controls; let ans_id=index"
+                                                                [formGroupName]="ans_id">
+                                                                <div class="field">
+                                                                    <input soho-checkbox type="checkbox"
+                                                                        class="checkbox"
+                                                                        (change)="onChangeCheckBox($event,quizform.value.quizId,i.value.questionId)"
+                                                                        name="{{j.value.ansText}}"
+                                                                        [attr.id]="j.value.ansText"
+                                                                        value="{{j.value.ansId}}"
+                                                                        formControlName="useransText" />
+                                                                    <label soho-label [attr.for]="j.value.ansText"
+                                                                        [forCheckBox]="true">{{j.value.ansText}}</label>
+                                                                </div>
+                                                            </div>
+                                                        </ng-container>
+                                                    </div>
+
+                                                    <div *ngIf="i.value.answertype=='radio'">
+                                                        {{answers}}
+                                                        <ng-container formArrayName="answers">
+                                                            <div *ngFor="let j of i.get('answers').controls; let ans_id=index"
+                                                                [formGroupName]="ans_id">
+                                                                <div class="field">
+                                                                    <input soho-radiobutton type="radio" class="radio"
+                                                                        (click)="onRadioButtonChange($event,quizform.value.quizId,i.value.questionId)"
+                                                                        value="{{j.value.ansId}}"
+                                                                        id="{{j.value.ansText}}" name="{{i.value.question}}"/>
+                                                                    <label soho-label
+                                                                        for="{{j.value.ansText}}">{{j.value.ansText}}</label>
+                                                                    <!-- 
+                                                                <input soho-radiobutton type="radio" class="radio"
+                                                                (change)="onChangeCheckBox($event)" name="j.value.ansText"
+                                                                formControlName="useransText"  [attr.for]="j.value.ansText" />
+                                                                <label soho-label  [attr.for]="j.value.ansText"
+                                                                class="radio-label">{{j.value.ansText}}</label> -->
+                                                                </div>
+                                                            </div>
+                                                        </ng-container>
+                                                    </div>
+                                                    <div *ngIf="i.value.answertype=='text'">
+                                                        <div class="form-responsive row">
+                                                            <div class="full column">
+                                                                <div class="field">
+
+                                                                    <div *ngIf="i.value.answertype=='text'">
+                                                                        <ng-container formArrayName="answers">
+                                                                            <div *ngFor="let j of i.get('answers').controls; let ans_id=index"
+                                                                                [formGroupName]="ans_id">
+                                                                                <input type="text"
+                                                                                    formControlName="useransText"
+                                                                                    (change)="ChangeText($event,quizform.value.quizId,i.value.questionId,j.value.ansId)" />
+                                                                            </div>
+                                                                        </ng-container>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <!-- <div class="row">
+                        <div class="center-align-content">
+                            <div>
+                                <button class="btn-primary" type="button" (click)="decrement()">Previous</button>
+                            </div>
+                            <div *ngFor="let i of getarray(quizform.value.questionforms.length);let j=index;"
+                            class="Qnum">
+                            <button class="number btn" id={{j}} (click)="onClick($event)">{{j+1}}</button>
+                        </div>
+                        <div>
+                            <button class="btn-primary" type="button" (click)="increment()">Next</button>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="center-align-content">
+                    <button class="btn-primary" (click)="submitQuiz()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+
+
+
+<!--  <div class="three columns right-align-content" id="right">
+                                                <img [src]="img" width="200" height="280" />
+                                            </div> -->

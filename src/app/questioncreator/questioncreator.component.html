@@ -1,0 +1,102 @@
+<!-- Question adder -->
+<div class="full-width column">
+    <!-- <div class="row"> -->
+        <!-- <div class="three columns">
+            <pre>{{questionform.value|json}}</pre>
+        </div> -->
+        <!-- <div class="twelve columns"> -->
+            <!-- <div class="row">
+                <div class="twelve columns">
+                    <h1 class="fieldset-title text-strong" style="color: #0072ED;"></h1>
+                </div>
+            </div> -->
+
+            <form id="example-stacked-form" [formGroup]="questionform">
+                <div class="row">
+                    <div class="twelve columns">
+                        <div class="field five columns">
+                            <label soho-label for="question" class="required">Question</label>
+                            <input type="text" formControlName="question" id="question" data-validate="required"/>
+                        </div>
+                        
+                        <!-- Answer types -->
+                        <div class="field three columns" >
+                            <label soho-label for="answertype" class="required">Answer type</label>
+                            <select soho-dropdown (change)="onChange($event)" formControlName="answertype"
+                                id="answertype" name="answertype"  data-validate="required">
+                                <option *ngFor="let option of answertypes;" [value]="option.value">
+                                    {{option.text}}
+                                </option>
+                            </select>
+                            <div class="field" *ngIf="questionform.value.answertype=='choice' || questionform.value.answertype=='radio'">
+                                <label></label>
+                                <button soho-button class="choice-button" (click)="addChoice()"><b>+ Add Option</b></button>
+                            </div>
+                        </div>
+
+                        <!-- If answer Type is text box display text box -->
+                        <div class="row" *ngIf="questionform.value.answertype=='text'">
+                            <ng-container formArrayName="answers">
+                                <div class="field six columns" *ngFor="let opt of answers.controls; let ansid=index"
+                                    [formGroupName]="ansid">
+                                    <label soho-label class="required">Answer</label>
+                                    <input type="text" formControlName="ansText" data-validate="required"/>
+                                </div>
+                            </ng-container>
+                            
+                        </div>
+                        
+                        
+                        <div class="row" *ngIf="questionform.value.answertype=='choice' || questionform.value.answertype=='radio' ">
+                            <ng-container formArrayName="answers">
+                                <div class="six columns" *ngFor="let opt of answers.controls; let optid=index"
+                                    [formGroupName]="optid">
+                                    <div class="field">
+                                        <label soho-label class="required">Option{{optid+1}}</label>
+                                        <input type="text" formControlName="ansText" data-validate="required" />
+                                    </div>
+                                    <div class="field">
+                                        <!-- <div *ngIf="questionform.value.answertype=='radio' && "> -->
+                                        <input soho-checkbox type="checkbox" class="checkbox" (change)="onChangeCheckBox($event)"
+                                            formControlName="iscorrect" name="{{optid}}" [attr.id]="optid" />
+                                        <label soho-label [attr.for]="optid" [forCheckBox]="true" >Is Correct</label>
+                                        <!-- </div> -->
+                                        <button soho-button="icon" icon="delete"
+                                            (click)="removeChoice(optid)">Remove</button>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <!-- <div class="row" *ngIf="questionform.value.answertype=='radio' ">
+                            <ng-container formArrayName="answers">
+                                <div class="six columns" *ngFor="let opt of answers.controls; let radoptid=index"
+                                    [formGroupName]="radoptid">
+                                    <div class="field">
+                                        <label soho-label class="required">Option{{radoptid+1}}</label>
+                                        <input type="text" formControlName="ansText" required />
+                                    </div>
+                                    <div class="field">
+                                        <input soho-radiobutton soho-trackdirty type="radio" class="radio" (change)="onChangeRadio($event,radoptid)"
+                                            formControlName="iscorrect" [attr.name]="questionform.value.question" [attr.value]="ansText" [attr.id]="radoptid" required />
+                                        <label soho-label [attr.for]="radoptid" [forRadioButton]="true" class="required">Is Correct</label>
+                                        <button soho-button="icon" icon="delete"
+                                            (click)="removeChoice(radoptid)">Remove</button>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div> -->
+                        
+
+                        <!-- <div class="row">
+                            <div class="twelve columns">
+                                <button (click)="addQuestion()" soho-button="btn-primary" class="btn-primary"
+                                    type="submit">Add Question</button>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </form>
+        <!-- </div> -->
+    <!-- </div> -->
+</div>

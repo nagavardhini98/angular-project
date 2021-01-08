@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <div class="sub-header">
+                <div class="">
+                    <h1 style="color: white;">My Quizzes</h1>
+                </div>
+                <div class="">
+                    <button class="btn-primary"  routerLink="/create-quiz"
+                    routerLinkActive="active"><a style="color:white">Create Quiz</a></button>
+                </div>
+            </div>
+            <div>
+                <div class="row demo-grid" *ngFor="let quiz of quizzes; ">
+                    <!-- <div class="tweleve columns"> -->
+                    <div class="content-area" style="padding:1%; margin-bottom: 1%;">
+                        <div class="text-strong" style="font-size: large; padding: 3px;padding-left: 3px;">
+                            <div class="color-primary">{{quiz.quizName}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="full column">
+                                <div class="one-half column">
+                                    <div class="">
+                                        <b>Subject:</b> {{quiz.quizSubject}}
+                                    </div>
+                                    <div class="">
+                                        <b>Description: </b>{{quiz.quizDesc}}
+                                    </div>
+                                    <div class="">
+                                        <div class="switch">
+                                            <input type="checkbox" [checked]="quiz.isActive" id="{{quiz.quizId}}" [(ngModel)]="quiz.isActive"
+                                                name="{{quiz.quizId}}" class="switch" (change)="onswitch(quiz.quizId)"/>
+                                            <label for="{{quiz.quizId}}">Enable Quiz</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="float: right;">
+                                    <button class="btn-primary" [disabled]="!quiz.isActive" [routerLink]="['/quiz-screen', quiz.quizId]"><a style="color:white" 
+                                            routerLinkActive="active">Preview Quiz</a></button>
+                                <!-- </div> -->
+                                <!-- <div style="float: r;"> -->
+                                    <button class="btn-primary"  (click)="getReport(quiz)"><a style="color:white" 
+                                            routerLinkActive="active">Show Report</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

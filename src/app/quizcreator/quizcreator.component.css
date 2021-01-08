@@ -1,0 +1,12 @@
+.columns{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+textarea{
+    /* width: 100%; */
+    min-height: 150px;
+}
+input{
+    width: 100%;
+}

@@ -1,0 +1,116 @@
+<div class="twelve columns">
+    <div class="row">
+        <div class="twelve columns">
+            <div>
+                <h1 class="fieldset-title" style="color:white;font-weight: bold;">Create your Quiz Here</h1>
+                <!-- <div><pre>{{quizform.value|json}}</pre></div>rngjkanergagnrg -->
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <div class="row">
+                <form [formGroup]="quizform">
+                    <!-- ##Quiz Details -->
+                    <div class="content-area border-top">
+                        <div class="container">
+                            <div class="form-reponsive row">
+                                <div class="full column">
+                                    <div class="field">
+                                        <label soho-label for="quizName" class="required">Quiz name</label>
+                                        <input type="text" formControlName="quizName" id="quizName"
+                                            data-validate="required" />
+                                    </div>
+                                </div>
+                                <div class="full column">
+                                    <div class="field">
+                                        <label soho-label for="quizSubject" class="required">Subject</label>
+                                        <input type="text" formControlName="quizSubject" id="quizSubject"
+                                            data-validate="required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-responsive row">
+                                <div class="full column">
+                                    <div class="field">
+                                        <label soho-label for="quizDesc" class="required">Description</label>
+                                        <textarea class="textarea resizable" type="text" formControlName="quizDesc"
+                                            id="quizDesc" data-validate="required"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Questions -->
+                        <div class="container" style="margin-top:-30px;">
+                            <div class="sub-heading">
+                                <div class="container">
+                                    <label class="text-strong"
+                                        style="color: #0072ED; font-size: large;">Questions({{questions_array.length}})</label>
+                                    <!-- <div><pre>{{quizform.value|json}}</pre></div>rngjkanergagnrg -->
+                                </div>
+                                <div class="container" style="margin-right: 2%;">
+                                    <!-- <button (click)="addQuestion()" soho-button="btn-primary" class="btn-primary">Add Question</button> -->
+                                    <button class="choice-button" type="button" (click)="openQuestionForm()">+ Add Question</button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <ng-container *ngFor="let question_item of questions_array; let que_id=index">
+                            <div class="row">
+                                <div class="twelve columns">
+                                    <div class="row">
+                                        <div class="content-area border-left">
+                                            <div class="container">
+                                                <div class="row question-row">
+                                                    <b>{{que_id+1}}. {{question_item.question|titlecase}}?</b>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="twelve columns">
+                                                        <p>Answer Type: {{question_item.answertype}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="twelve columns">
+                                                        <ng-container
+                                                            *ngFor="let answer_item of question_item.answers; let ans_id=index">
+                                                            <div class="row" *ngIf="question_item.answers.length==1">
+                                                                <b>Correct Answer: </b>
+                                                                <span style="color: green;">
+                                                                    {{answer_item.ansText}}
+                                                                </span>
+                                                            </div>
+                                                            <div class="row" *ngIf="question_item.answers.length>1">
+                                                                <b>Option {{ans_id+1}}: </b>
+                                                                <span *ngIf="answer_item.iscorrect==true"
+                                                                    style="color: green;">
+                                                                    {{answer_item.ansText}}
+                                                                </span>
+                                                                <span *ngIf="answer_item.iscorrect==false"
+                                                                    style="color: red;">
+                                                                    {{answer_item.ansText}}
+                                                                </span>
+                                                            </div>
+                                                        </ng-container>
+
+                                                    </div>
+                                                </div>
+                                                <!-- <button soho-button class="btn-quad" icon="edit">Edit</button> -->
+                                                <button soho-button class="btn-danger" (click)="removeQuestion(que_id)"
+                                                    icon="delete">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <div class="center-align-content">
+                            <button class="btn-primary border-black" (click)="onCreateQuiz()">Submit Quiz</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

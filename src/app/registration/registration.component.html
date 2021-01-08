@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="right-align-content">
+    <!-- <div class="eight columns left-align-content">
+      <img src="https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cXVpenxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"/>
+    </div> -->
+    <div class="four columns">
+      <div class="container" style="margin-top: 2%;">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="widget-title" style="align-content: center;">Registration</h2>
+          </div>
+          <div class="card-content" style="height: 100%;">
+            <div class="row">
+              <form #testform="ngForm" data-validate="required">
+                <div class="twelve columns">
+                  <div class="container">
+                    <div class="form-reponsive row">
+                      <div class="field">
+                        <label class="required" for="sname"> Name</label>
+                        <input type="text" id="name" aria-required="true" placeholder="Enter  Name" name="name"
+                          data-validate="required" [(ngModel)]="name" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" placeholder="Enter email" name="email"
+                          data-validate="required email" [(ngModel)]="email" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="org" class="required">Organization</label>
+                        <input type="text" id="org" placeholder="Enter Organization" name="org" data-validate="required"
+                          [(ngModel)]="org" required />
+                      </div>
+
+                      <div class="field">
+                        <label for="uname" class="required">UserName</label>
+                        <input type="text" id="uname" placeholder="Enter UserName" name="uname" data-validate="required"
+                          [(ngModel)]="uname" required />
+                      </div>
+                      <div class="field">
+                        <label for="p1" class="required">Password</label>
+                        <input type="password" id="p1" placeholder="Enter password" name="p1" data-validate="required"
+                          [(ngModel)]="password" required />
+                      </div>
+                      <div class="field">
+                        <label for="p2" class="required">Confirm Password</label>
+                        <input type="password" id="p2" placeholder="Enter confirm password" name="p2"
+                          data-validate="required" ngModel required />
+                      </div>
+
+                      <div>
+                        <button class="btn-primary" type="submit" id="primary-action-one" (click)="doPost()">
+                          Register</button><br>
+
+                        <button class="btn-primary" type="button" (click)="testform.resetForm()" id="primary-action-two"
+                          style="position: relative;left:150px;bottom:34px;">
+                          Clear</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="eight columns" style="position: relative;top:10px;">  <img class="imgs" src="assets/images/imgbg.jpg" width="100%" height="100%"></div> -->
+  </div>

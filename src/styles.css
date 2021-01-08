@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    --soho_primary: #0072ED;
+}
+.color-primary{
+    color:var(--soho_primary);
+}
+.text-white{
+    color:white;
+}
+.bold{
+    font-weight: bold;
+}
+.fs-large{
+    font-size: x-large;
+}
+.head-logo{
+    margin-left: 2%;
+}
+.choice-button{
+    background-color: black;
+    color:white;
+    padding: 7px;
+    margin-top: 1px;
+    font-size: small;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid ;
+}
+.choice-button:hover{
+    background-color: white;
+    color:black;
+    border: 2px solid black;
+}
+.container{
+    margin:1%;
+}
+.sub-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:1%;
+}
+
+.border-top{
+    border-top: 2px solid var(--soho_primary);
+}
+.border-left{
+    border-left: 2px solid var(--soho_primary);
+}
+.question-row{
+    border-bottom:2px solid var(--soho_primary);
+    margin: 0.5%;
+    padding-bottom: 0.5%;
+}
+.btn-danger{
+    background-color: white;
+    color:red;
+    border-color: red;
+}
+.btn-quad{
+    background-color: white;
+    color:green;
+    border-color: green;
+}
+
+.content-area{
+    border-radius: 3px;
+    padding-top: 1%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 1%;
+}
+
+.content-card{
+    background-color: white;
+    margin: 1%;
+}
+.content-area-80{
+    width: 80%;
+}
+.content-area-square{
+    border-radius: 3px;
+    padding-top: 1%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    min-height: 300px;
+    margin: 1%;
+}
+.content-area-80{
+    width: fit-content;
+}
+.center-align-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:1%;
+}
+.right-align-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin:1%;
+}
+.left-align-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin:1%;
+}
+.sub-heading{
+    padding-left: 1%;
+    padding-right: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.border-black{
+    border: 1px solid black;
+}
+.errorToast{
+    color:red;
+    border-color: red;
+}
+.text-white{
+    color: white;
+}
+.back{
+    margin-top: -1%;
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cXVpenxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+}

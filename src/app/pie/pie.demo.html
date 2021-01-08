@@ -1,0 +1,24 @@
+<div class="row top-padding center-align-content">
+  <div class="two-thirds column " >
+    <div class="card auto-height">
+      <div class="card-header">
+
+        <h2 class="card-title"><b>Thanks for attempting!! Your Results are here:</b></h2>
+      </div>
+      <div class="card-content">
+        <div class="one-half column">
+          <div>
+            <p class="fieldset-title" style="padding: 20px;">Questions Attempted:{{que_attempted}}</p>
+            <p class="fieldset-title" style="padding: 20px;">Score:{{score}}</p>
+          </div>
+        </div>
+        <div class="one-half column">
+          <h2 class="fieldset-title" style="padding: 20px;"><b>Pie Chart:</b></h2>
+          <div soho-pie [dataset]="pieData" (selected)="onSelected($event)" (deselected)="onDeselected($event)"
+            (rendered)="onRendered($event)" style="height: inherit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

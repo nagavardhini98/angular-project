@@ -1,0 +1,20 @@
+/* .row{
+    background-image: url('imgbg.jpg');
+     background-repeat: no-repeat;
+} */
+*{
+    --soho_primary: #0072ED;
+}
+.widget-title{
+    color:var(--soho_primary);
+    font-size: xx-large;
+}
+.back{
+    margin-top: -1%;
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cXVpenxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+}

@@ -1,0 +1,163 @@
+{
+  "quizId": 1,
+  "quizName": "Javascript Quizzie",
+  "quizSubject": "Just a small js test",
+  "quizDesc": "Its a quiz for testing the knowledge of js",
+  "questionforms": [
+    {
+      "questionId": 1,
+      "question": "Function to remove an element",
+      "answertype": "radio",
+      "answers": [
+        {
+          "ansId": 1,
+          "ansText": "splice",
+          "iscorrect": true
+        },
+        {
+          "ansId": 2,
+          "ansText": "slice",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "questionId": 2,
+      "question": "Whats the output?  function(){ console.log('hii')}",
+      "answertype": "text",
+      "answers": [
+        {
+          "ansId": 1,
+          "ansText": "hii",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "questionId": 3,
+      "question": "Function to remove an element in js",
+      "answertype": "radio",
+      "answers": [
+        {
+          "ansId": 1,
+          "ansText": "Splice",
+          "iscorrect": true
+        },
+        {
+          "ansId": 2,
+          "ansText": "Slice",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "questionId": 4,
+      "question": "Function to remove an element from an array?",
+      "answertype": "choice",
+      "answers": [
+        {
+          "ansId": 1,
+          "ansText": "removeAt",
+          "iscorrect": true
+        },
+        {
+          "ansId": 2,
+          "ansText": "delete",
+          "iscorrect": false
+        },
+        {
+          "ansId": 3,
+          "ansText": "pop",
+          "iscorrect": true
+        },
+        {
+          "ansId": 4,
+          "ansText": "remove",
+          "iscorrect": false
+        }
+      ]
+    }
+  ]
+},
+{
+  "userId": 1,
+  "quizId": 2,
+  "quizName": "JS Quizzie",
+  "quizSubject": "Just a small js test",
+  "quizDesc": "Its a quiz for testing the knowledge of js",
+  "questionforms": [
+    {
+      "questionId": 1,
+      "question": "Function to remove an element",
+      "answertype": "radio",
+      "answers": [
+        {
+          "ansId": 1,
+          "useransText": "",
+          "ansText": "splice"
+        },
+        {
+          "ansId": 2,
+          "useransText": "",
+          "ansText": "slice"
+        }
+      ]
+    },
+    {
+      "questionId": 2,
+      "question": "Whats the output?",
+      "answertype": "text",
+      "answers": [
+        {
+          "ansId": 3,
+          "useransText": "yyy",
+          "ansText": "hii"
+        }
+      ]
+    },
+    {
+      "questionId": 3,
+      "question": "Function to remove an element in js",
+      "answertype": "radio",
+      "answers": [
+        {
+          "ansId": 4,
+          "useransText": "4",
+          "ansText": "Splice"
+        },
+        {
+          "ansId": 5,
+          "useransText": "",
+          "ansText": "Slice"
+        }
+      ]
+    },
+    {
+      "questionId": 4,
+      "question": "Function to remove an element from an array?",
+      "answertype": "choice",
+      "answers": [
+        {
+          "ansId": 6,
+          "useransText": "",
+          "ansText": "removeAt"
+        },
+        {
+          "ansId": 7,
+          "useransText": "7",
+          "ansText": "delete"
+        },
+        {
+          "ansId": 8,
+          "useransText": "",
+          "ansText": "pop"
+        },
+        {
+          "ansId": 9,
+          "useransText": "",
+          "ansText": "remove"
+        }
+      ]
+    }
+  ]
+}
